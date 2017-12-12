@@ -1,0 +1,22 @@
+{
+  "name": "gem-checker",
+  "main": "./lib/gem-checker",
+  "version": "0.0.0",
+  "description": "A short description of your package",
+  "keywords": [],
+  "activationCommands": {
+    "atom-workspace": "gem-checker:toggle"
+  },
+  "repository": "https://github.com/atom/gem-checker",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+    "file-system": "^2.2.2",
+    "jquery": "^2.1.4"
+  },
+  "devDependencies": {
+    "electron-prebuilt": "^1.4.13"
+  }
+}

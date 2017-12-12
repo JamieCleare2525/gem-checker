@@ -1,0 +1,26 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "Toggle gem-checker",
+        "command": "gem-checker:toggle"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "gem-checker",
+          "submenu": [
+            {
+              "label": "Toggle",
+              "command": "gem-checker:toggle"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
