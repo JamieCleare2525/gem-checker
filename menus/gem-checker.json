@@ -2,8 +2,8 @@
   "context-menu": {
     "atom-text-editor": [
       {
-        "label": "Toggle gem-checker",
-        "command": "gem-checker:toggle"
+        "label": "Check All Gemfile Gem Versions",
+        "command": "gem-checker:all_gem_versions"
       }
     ]
   },
@@ -15,8 +15,8 @@
           "label": "gem-checker",
           "submenu": [
             {
-              "label": "Toggle",
-              "command": "gem-checker:toggle"
+              "label": "Check All Gemfile Gem Versions",
+              "command": "gem-checker:all_gem_versions"
             }
           ]
         }
