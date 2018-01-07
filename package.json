@@ -5,7 +5,8 @@
   "description": "A short description of your package",
   "keywords": [],
   "activationCommands": {
-    "atom-workspace": "gem-checker:all_gem_versions"
+    "atom-workspace": "gem-checker:all_gem_versions",
+    "atom-workspace": "gem-checker:get_gem_details"
   },
   "repository": "https://github.com/atom/gem-checker",
   "license": "MIT",

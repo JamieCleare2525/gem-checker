@@ -4,6 +4,10 @@
       {
         "label": "Check All Gemfile Gem Versions",
         "command": "gem-checker:all_gem_versions"
+      },
+      {
+        "label": "Gem Details",
+        "command": "gem-checker:get_gem_details"
       }
     ]
   },
@@ -17,6 +21,10 @@
             {
               "label": "Check All Gemfile Gem Versions",
               "command": "gem-checker:all_gem_versions"
+            },
+            {
+              "label": "Gem Details",
+              "command": "gem-checker:get_gem_details"
             }
           ]
         }
