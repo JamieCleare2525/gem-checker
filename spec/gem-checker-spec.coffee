@@ -1,39 +1,3 @@
-# GemChecker = require '../lib/gem-checker'
-#
-# describe 'GemChecker', ->
-#   [activationPromise, editor, editorView] = []
-#
-#   beforeEach ->
-#     expect(atom.packages.isPackageActive('gem-checker')).toBe false
-#
-#     workspaceElement = atom.views.getView(atom.workspace)
-#     atom.notifications.clear()
-#
-#     waitsForPromise ->
-#       atom.workspace.open('Gemfile')
-#
-#     runs ->
-#       editor = atom.workspace.getActiveTextEditor()
-#       editorView = atom.views.getView(editor)
-#
-#       activationPromise = atom.packages.activatePackage('gem-checker')
-#
-#   describe 'Before Activation', ->
-#     it 'should not be active', ->
-#       expect(atom.packages.isPackageActive('gem-checker')).toBe false
-#
-#   describe 'Gem Details Functions', ->
-#
-#     it 'should create notification containing Gem Details', ->
-#       waitsForPromise ->
-#         atom.workspace.open('Gemfile')
-#
-#       runs ->
-#         editor.setCursorBufferPosition([3, 8])
-#         b = editor.lineTextForBufferRow(editor.getCursorBufferPositions()[0]["row"]).trim();
-#         console.log(b)
-#         atom.commands.dispatch editorView, 'gem-checker:get_gem_details'
-
 GemChecker = require '../lib/gem-checker'
 
 describe 'GemChecker', ->
