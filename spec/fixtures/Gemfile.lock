@@ -1,0 +1,5 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    abc (3.4.5)
+    devise (4.3.0)

@@ -6,7 +6,8 @@
   "keywords": [],
   "activationCommands": {
     "atom-workspace": "gem-checker:all_gem_versions",
-    "atom-workspace": "gem-checker:get_gem_details"
+    "atom-workspace": "gem-checker:get_gem_details",
+    "atom-workspace": "gem-checker:check_gem_maintenance"
   },
   "repository": "https://github.com/atom/gem-checker",
   "license": "MIT",

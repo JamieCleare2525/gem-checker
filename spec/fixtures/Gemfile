@@ -1,0 +1,4 @@
+source 'https://rubygems.org'
+
+gem 'abc', path: 'gems/abc'
+gem 'devise'
