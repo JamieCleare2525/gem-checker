@@ -77,4 +77,166 @@ describe('GemChecker', () => {
       });
     });
   });
+
+  describe('when the gem-checker:all_gem_versions event is triggered', () => {
+    it('shows a warning notification identifiing an Out-of-Date gem', () => {
+      editor = atom.workspace.getActiveTextEditor();
+      editor.setCursorBufferPosition([3, 8]);
+      spyOn( $, 'ajax' ).andCallFake( function (params) { 
+        if (params['url'] == "https://rubygems.org/api/v1/versions/devise.json"){
+          params.success([
+                          {
+                           info: "Flexible authentication solution for Rails with Warden",
+                           gem_uri: "https://rubygems.org/gems/devise-4.4.0.gem",
+                           built_at: "2015-03-14T00:00:00.000Z",
+                           number: "4.4.2"
+                          },
+                          {
+                           info: "Flexible authentication solution for Rails with Warden",
+                           gem_uri: "https://rubygems.org/gems/devise-4.4.0.gem",
+                           built_at: "2015-03-14T00:00:00.000Z",
+                           number: "4.4.1"
+                          },
+                          {
+                            info: "Flexible authentication solution for Rails with Warden",
+                            gem_uri: "https://rubygems.org/gems/devise-4.4.0.gem",
+                            built_at: "2015-03-14T00:00:00.000Z",
+                            number: "4.4.0"
+                          },
+                          {
+                           info: "Flexible authentication solution for Rails with Warden",
+                           gem_uri: "https://rubygems.org/gems/devise-4.4.0.gem",
+                           built_at: "2015-03-14T00:00:00.000Z",
+                           number: "4.3.0"
+                          }
+                         ], {}, {status: 200}); 
+        }else{
+          params.success({name: 'devise', info: "Flexible authentication solution for Rails with Warden",
+                          gem_uri: "https://rubygems.org/gems/devise-4.4.0.gem",
+                          homepage_uri: "https://github.com/plataformatec/devise",
+                          project_uri: "https://rubygems.org/gems/devise",
+                          version: "4.4.0"
+                         }, {}, {status: 200}); 
+        }
+      });
+      atom.commands.dispatch(workspaceElement, 'gem-checker:all_gem_versions');
+      waitsForPromise(() => {
+        return activationPromise;
+      });
+
+      runs(() => {
+        expect(atom.notifications.getNotifications().length).toBe(1);
+        notification = atom.notifications.getNotifications()[0]
+        expect(notification['message']).toBe("Caution: Gem Out-of-Date");
+        expect(notification['type']).toBe("warning");
+        expect(notification['options']['detail']).toBe("Gem: devise\nThis Gem is Out-of-Date. Please consider Updating this Gem.\n \nCurrent Version: 4.3.0\nLatest Version: 4.4.2");
+      });
+    });
+  });
+
+  describe('when the gem-checker:all_gem_versions event is triggered', () => {
+    it('shows an info notification identifiing a new available version for a gem', () => {
+      editor = atom.workspace.getActiveTextEditor();
+      editor.setCursorBufferPosition([3, 8]);
+      spyOn( $, 'ajax' ).andCallFake( function (params) { 
+        if (params['url'] == "https://rubygems.org/api/v1/versions/devise.json"){
+          params.success([
+                          {
+                            info: "Flexible authentication solution for Rails with Warden",
+                            gem_uri: "https://rubygems.org/gems/devise-4.4.0.gem",
+                            built_at: "2015-03-14T00:00:00.000Z",
+                            number: "4.4.0"
+                          },
+                          {
+                           info: "Flexible authentication solution for Rails with Warden",
+                           gem_uri: "https://rubygems.org/gems/devise-4.4.0.gem",
+                           built_at: "2015-03-14T00:00:00.000Z",
+                           number: "4.3.0"
+                          }
+                         ], {}, {status: 200}); 
+        }else{
+          params.success({name: 'devise', info: "Flexible authentication solution for Rails with Warden",
+                          gem_uri: "https://rubygems.org/gems/devise-4.4.0.gem",
+                          homepage_uri: "https://github.com/plataformatec/devise",
+                          project_uri: "https://rubygems.org/gems/devise",
+                          version: "4.4.0"
+                         }, {}, {status: 200}); 
+        }
+      });
+      atom.commands.dispatch(workspaceElement, 'gem-checker:all_gem_versions');
+      waitsForPromise(() => {
+        return activationPromise;
+      });
+
+      runs(() => {
+        expect(atom.notifications.getNotifications().length).toBe(1);
+        notification = atom.notifications.getNotifications()[0]
+        expect(notification['message']).toBe("Information: New Gem Version Available");
+        expect(notification['type']).toBe("info");
+        expect(notification['options']['detail']).toBe("Gem: devise\nNew Version Available for this Gem!\n \nCurrent Version: 4.3.0\nLatest Version: 4.4.0");
+      });
+    });
+  });
+
+  describe('when the gem-checker:all_gem_versions event is triggered', () => {
+    it('shows an error notification identifiing a Severely Out-of-Date gem', () => {
+      editor = atom.workspace.getActiveTextEditor();
+      editor.setCursorBufferPosition([3, 8]);
+      spyOn( $, 'ajax' ).andCallFake( function (params) { 
+        if (params['url'] == "https://rubygems.org/api/v1/versions/devise.json"){
+          params.success([
+                          {
+                           info: "Flexible authentication solution for Rails with Warden",
+                           gem_uri: "https://rubygems.org/gems/devise-4.4.0.gem",
+                           built_at: "2015-03-14T00:00:00.000Z",
+                           number: "4.4.3"
+                          },
+                          {
+                           info: "Flexible authentication solution for Rails with Warden",
+                           gem_uri: "https://rubygems.org/gems/devise-4.4.0.gem",
+                           built_at: "2015-03-14T00:00:00.000Z",
+                           number: "4.4.2"
+                          },
+                          {
+                           info: "Flexible authentication solution for Rails with Warden",
+                           gem_uri: "https://rubygems.org/gems/devise-4.4.0.gem",
+                           built_at: "2015-03-14T00:00:00.000Z",
+                           number: "4.4.1"
+                          },
+                          {
+                            info: "Flexible authentication solution for Rails with Warden",
+                            gem_uri: "https://rubygems.org/gems/devise-4.4.0.gem",
+                            built_at: "2015-03-14T00:00:00.000Z",
+                            number: "4.4.0"
+                          },
+                          {
+                           info: "Flexible authentication solution for Rails with Warden",
+                           gem_uri: "https://rubygems.org/gems/devise-4.4.0.gem",
+                           built_at: "2015-03-14T00:00:00.000Z",
+                           number: "4.3.0"
+                          }
+                         ], {}, {status: 200}); 
+        }else{
+          params.success({name: 'devise', info: "Flexible authentication solution for Rails with Warden",
+                          gem_uri: "https://rubygems.org/gems/devise-4.4.0.gem",
+                          homepage_uri: "https://github.com/plataformatec/devise",
+                          project_uri: "https://rubygems.org/gems/devise",
+                          version: "4.4.0"
+                         }, {}, {status: 200}); 
+        }
+      });
+      atom.commands.dispatch(workspaceElement, 'gem-checker:all_gem_versions');
+      waitsForPromise(() => {
+        return activationPromise;
+      });
+
+      runs(() => {
+        expect(atom.notifications.getNotifications().length).toBe(1);
+        notification = atom.notifications.getNotifications()[0]
+        expect(notification['message']).toBe("Warning: Gem Out-of-Date");
+        expect(notification['type']).toBe("error");
+        expect(notification['options']['detail']).toBe("Gem: devise\nThis Gem is Severely Out-of-Date! Please consider Updating this Gem!\n \nCurrent Version: 4.3.0\nLatest Version: 4.4.3");
+      });
+    });
+  });
 });
