@@ -7,7 +7,7 @@
       },
       {
         "label": "Gem Details",
-        "command": "gem-checker:get_gem_details"
+        "command": "gem-checker:gem_info"
       },
       {
         "label": "Check Gem Maintenance",
@@ -28,7 +28,7 @@
             },
             {
               "label": "Gem Details",
-              "command": "gem-checker:get_gem_details"
+              "command": "gem-checker:gem_info"
             },
             {
               "label": "Check Gem Maintenance",

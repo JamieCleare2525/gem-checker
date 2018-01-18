@@ -7,7 +7,7 @@
   "activationCommands": {
     "atom-workspace": [
       "gem-checker:all_gem_versions",
-      "gem-checker:get_gem_details",
+      "gem-checker:gem_info",
       "gem-checker:check_gem_maintenance"
     ]
   },
