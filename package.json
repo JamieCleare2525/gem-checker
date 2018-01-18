@@ -2,7 +2,7 @@
   "name": "gem-checker",
   "main": "./lib/gem-checker",
   "version": "0.0.0",
-  "description": "A short description of your package",
+  "description": "Package for Ruby on Rails Gem Information and Version Alert Notifications",
   "keywords": [],
   "activationCommands": {
     "atom-workspace": [
@@ -11,7 +11,7 @@
       "gem-checker:check_gem_maintenance"
     ]
   },
-  "repository": "https://github.com/atom/gem-checker",
+  "repository": "https://github.com/JamieCleare2525/gem-checker.git",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
