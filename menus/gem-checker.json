@@ -12,6 +12,10 @@
       {
         "label": "Check Gem Maintenance",
         "command": "gem-checker:check_gem_maintenance"
+      },
+      {
+        "label": "Gemfile Summary Report",
+        "command": "gem-checker:gemfile_summary"
       }
     ]
   },
@@ -33,6 +37,10 @@
             {
               "label": "Check Gem Maintenance",
               "command": "gem-checker:check_gem_maintenance"
+            },
+            {
+              "label": "Gemfile Summary Report",
+              "command": "gem-checker:gemfile_summary"
             }
           ]
         }
