@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "file-system": "^2.2.2",
-    "jquery": "^2.1.4"
+    "jquery": "^3.0.0"
   },
   "devDependencies": {
     "electron-prebuilt": "^1.4.13"

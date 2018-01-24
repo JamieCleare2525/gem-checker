@@ -1,1 +1,18 @@
-Gemfile Summary
+Gem Summary
+
+======================
+New Versions Available
+======================
+
+======================
+Gems 2 - 4 Versions Out of Date
+======================
+
+======================
+Gems 5+ Versions Out of Date
+======================
+Name: devise
+Current Version: 4.3.0
+Latest Version: 4.4.3
+Versions Behind: 4
+ 
