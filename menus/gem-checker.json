@@ -41,6 +41,10 @@
             {
               "label": "Gemfile Summary Report",
               "command": "gem-checker:gemfile_summary"
+            },
+            {
+              "label": "Show Settings",
+              "command": "gem-checker:show_settings"
             }
           ]
         }
