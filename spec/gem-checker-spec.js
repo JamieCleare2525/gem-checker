@@ -232,9 +232,9 @@ describe('GemChecker', () => {
       runs(() => {
         expect(atom.notifications.getNotifications().length).toBe(1);
         notification = atom.notifications.getNotifications()[0]
-        expect(notification['message']).toBe("Warning: Gem Out-of-Date");
-        expect(notification['type']).toBe("error");
-        expect(notification['options']['detail']).toBe("Gem: devise\nThis Gem is Severely Out-of-Date! Please consider Updating this Gem!\n \nCurrent Version: 4.3.0\nLatest Version: 4.4.3");
+        expect(notification['message']).toBe("Caution: Gem Out-of-Date");
+        expect(notification['type']).toBe("warning");
+        expect(notification['options']['detail']).toBe("Gem: devise\nThis Gem is Out-of-Date. Please consider Updating this Gem.\n \nCurrent Version: 4.3.0\nLatest Version: 4.4.3");
       });
     });
   });
