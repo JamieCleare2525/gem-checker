@@ -12,6 +12,10 @@
       {
         "label": "Check Gem Maintenance",
         "command": "gem-checker:check_gem_maintenance"
+      },
+      {
+        "label": "Gemfile Summary Report",
+        "command": "gem-checker:gemfile_summary"
       }
     ]
   },
@@ -23,16 +27,34 @@
           "label": "gem-checker",
           "submenu": [
             {
-              "label": "Check All Gemfile Gem Versions",
-              "command": "gem-checker:all_gem_versions"
+              "label": "Cursor",
+              "submenu": [
+                {
+                  "label": "Check Gem Maintenance",
+                  "command": "gem-checker:check_gem_maintenance"
+                },
+                {
+                  "label": "Gem Details",
+                  "command": "gem-checker:gem_info"
+                }
+              ]
             },
             {
-              "label": "Gem Details",
-              "command": "gem-checker:gem_info"
+              "label": "Gemfile",
+              "submenu": [
+                {
+                  "label": "Check All Gemfile Gem Versions",
+                  "command": "gem-checker:all_gem_versions"
+                },
+                {
+                  "label": "Gemfile Summary Report",
+                  "command": "gem-checker:gemfile_summary"
+                }
+              ]
             },
             {
-              "label": "Check Gem Maintenance",
-              "command": "gem-checker:check_gem_maintenance"
+              "label": "Show Settings",
+              "command": "gem-checker:show_settings"
             }
           ]
         }

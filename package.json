@@ -8,7 +8,9 @@
     "atom-workspace": [
       "gem-checker:all_gem_versions",
       "gem-checker:gem_info",
-      "gem-checker:check_gem_maintenance"
+      "gem-checker:check_gem_maintenance",
+      "gem-checker:gemfile_summary",
+      "gem-checker:show_settings"
     ]
   },
   "repository": "https://github.com/JamieCleare2525/gem-checker.git",
@@ -18,7 +20,7 @@
   },
   "dependencies": {
     "file-system": "^2.2.2",
-    "jquery": "^2.1.4"
+    "jquery": "^3.0.0"
   },
   "devDependencies": {
     "electron-prebuilt": "^1.4.13"
