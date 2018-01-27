@@ -1,7 +1,7 @@
 {
   "name": "gem-checker",
   "main": "./lib/gem-checker",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Package for Ruby on Rails Gem Information and Version Alert Notifications",
   "keywords": [],
   "activationCommands": {
