@@ -242,6 +242,7 @@ describe('GemChecker', () => {
   describe('when the gem-checker:gemfile_summary event is triggered', () => {
     it('shows an error notification identifiing a Severely Out-of-Date gem', () => {
       editor = atom.workspace.getActiveTextEditor();
+      spyOn(atom.config, "get").andReturn(5);
       spyOn( $, 'ajax' ).andCallFake( function (params) { 
         if (params['url'] == "https://rubygems.org/api/v1/versions/devise.json"){
           params.success([
