@@ -10,6 +10,7 @@
       "gem-checker:gem_info",
       "gem-checker:check_gem_maintenance",
       "gem-checker:gemfile_summary",
+      "gem-checker:remove_highlights",
       "gem-checker:show_settings"
     ]
   },

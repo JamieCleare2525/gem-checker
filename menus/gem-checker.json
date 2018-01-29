@@ -53,6 +53,10 @@
               ]
             },
             {
+              "label": "Remove Highlights",
+              "command": "gem-checker:remove_highlights"
+            },
+            {
               "label": "Show Settings",
               "command": "gem-checker:show_settings"
             }
